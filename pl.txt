@@ -1,4 +1,4 @@
-select * from dual;
+select now from dual;
 
 select * from Biicai_User;
 
