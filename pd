@@ -2,3 +2,6 @@ readmo
 pd
 pdclass
 pdorder
+
+$ git log --graph --pretty=online --abbrev-commit
+$ git log --graph --pretty=oneline --abbrev-commit
