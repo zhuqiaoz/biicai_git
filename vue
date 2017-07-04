@@ -13,3 +13,10 @@ Use ESlint to lint you code？
 ···
 输入NO
 
+
+##vue
+
+npm run build  去掉js文件中的map文件
+
+config 中 index.js将
+productionSourceMap: false,
