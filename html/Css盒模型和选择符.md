@@ -47,7 +47,9 @@
     - E:enabled:匹配用户界面上处于可用状态的元素E。
     - E:disabled:匹配用户界面上处于禁用状态的元素E。
     - E:target:匹配相关URL指向的E元素。
-+伪对象选择符：
+
++ 伪对象选择符：
+
     - E:first-letter/E::first-letter: 设置对象内的第一个字符的样式。
         >此伪对象仅作用于块对象。内联对象要使用该伪对象，必须先将其设置为块级对象。该伪类常被用来配合font-size属性和float属性制作首字下沉效果。IE6在使用该选择符时有个显式的BUG：选择符与包含规则的花括号之间不能紧挨着，需留有空格或换行。同时还存在该BUG的选择符包括：E:first-line。CSS3将伪对象选择符(Pseudo-Element Selectors)前面的单个冒号(:)修改为双冒号(::)用以区别伪类选择符(Pseudo-Classes Selectors)，但以前的写法仍然有效。
 
