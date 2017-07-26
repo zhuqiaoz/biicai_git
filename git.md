@@ -1,12 +1,24 @@
-//中文乱码
-$ git config --global core.quotepath false  
-$ git config core.quotepath false  
+# Git
+
+1. 设置提交代码的用户信息
+```
+git config --global user.name "Your Name"
+git config --global user.email "email@example.com"
+```
+2. 配置ssh
+```
+ssh-keygen -t rsa -C "youremail@example.com"
+```
+> -t 密钥类型 -C 注释
 
 
 
-$ git log --graph --pretty=online --abbrev-commit
 
-
+3. 常用操作
+```
+git remote add origin git@github.com:michaelliao/learngit.git    
+git clone git@github.com:michaelliao/gitskills.git //下载远程库 
+git log --graph --pretty=online --abbrev-commit
 git init    //创建git库
 git status  //检查git库中文件状态
 git add <filename>  //将git工作区中的文件放入暂存区
@@ -50,18 +62,24 @@ git tag -d v1.0 //删除标签
 git push origin v1.0 //推送至GitHub
 git push origin --tags //一次性推送全部尚未推送到远程的本地标签
 git push origin :refs/tags/v0.9 //删除GitHub上的标签
+```
 
 
-//配置git
+
+
+* 配置git
+```
 git config --global color.ui true //输出文字颜色醒目
 .gitignore  //设置git忽略文件的样式。https://github.com/github/gitignore
 git check-ignore //查看.gitignore(git定义忽略提醒的文件格式)错误。
 
 rm <file> // 删除文件
 git rm <file> //删除提交的文件
+```
 
+* 解决中文乱码
+```
+$ git config --global core.quotepath false  
+$ git config core.quotepath false  
+```
 
-
-git remote add origin git@github.com:michaelliao/learngit.git   
-
-git clone git@github.com:michaelliao/gitskills.git
