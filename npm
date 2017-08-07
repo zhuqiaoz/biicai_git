@@ -1,9 +1,0 @@
-npm install mock  //安装模块
-npm install mock -g  //全局安装
-npm install mock --save-dev //安装模块并添加到package.json中
-npm ls //查看已安装的模块
-npm ls -g //查看全局已安装的模块
-npm uninstall mock //协助已安装的模块
-npm cache clean // 清除缓存
-
-cnpm
