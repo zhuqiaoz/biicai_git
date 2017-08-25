@@ -22,3 +22,9 @@
 
 >所以 cookie 和 session，你可以认为是同一层次的概念，也可以认为是不同层次的概念。具体到实现，session 因为 session id 的存在，通常要借助 cookie 实现，但这并非必要，只能说是通用性较好的一种实现方案。
 
+## cookie，localStorage和sessionStorage的区别
+
+* cookie，保存为字符串，存储容量小，随请求自动发送
+* localStorage与sessionStorage均为本地存储，属性Storage对象具有内置的API，均为本地存储
+* localStorage在关闭窗口或标签页后依然存在，而sessionStorage会被清除
+* 在同源的不同标签页中共享localStorage，但不共享sessionStorage
