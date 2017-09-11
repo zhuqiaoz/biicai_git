@@ -8,6 +8,7 @@
 typeof null // Object
 Object.prototype.toString.call(null) //"[object Null]"
 ```
+>原理是这样的，不同的对象在底层都表示为二进制，在JavaScript中二进制前三位都为0的话会被判断为object类型，null的二进制表示是全0，自然前三位也是0，所以执行typeof时会返回“object”。
 
 
 ## Undefinde

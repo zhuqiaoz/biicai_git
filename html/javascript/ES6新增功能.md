@@ -17,32 +17,31 @@
         - rejected: 意味着操作失败。
         ```
                 var flace = function(){
-                var p = new Promise(function(resolve,reject){
+                    return  new Promise(function(resolve,reject){
                         setTimeout(function(){
                         var num = Math.floor(Math.random()*10+1);
                         if(num > 5){
-                                resolve(num+'数字大于5');
+                                resolve(num);
                         }else{
-                                reject(num+'数字小于5')
+                                reject(num)
                         }
                         },1000)
                 })
-                return p;
                 }
 
                 flace().then(function(data){
-                console.log('resolve');
-                console.log(data);
+                    console.log('resolve');
+                    console.log(data+'数字大于5');
                 return apld;
                 },
                 function(reason,data){
-                console.log('rejected');
-                console.log(reason);
+                    console.log('rejected');
+                    console.log(reason+'数字小于5');
                 return apld;
                 })
                 .catch(function(data){
-                console.log('catch');
-                console.log(data);
+                    console.log('catch');
+                    console.log(data);
                 })
         ```
         * resolve == 成功执行then的方法
