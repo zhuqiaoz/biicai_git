@@ -20,5 +20,29 @@
 document.querySelector('a').onclick = aHello.showName;
     
     </script>
+    <script>
+        var promise_pd = function(){
+            return new Promise(function(reslove,reject){
+                setTimeout(function(){
+                    var num = Math.floor(Math.random()*9+1);
+                    if (num > 5) {
+                        reslove(num);
+                    }else{
+                        reject(num);
+                    }
+                },1000)
+            })
+        }
+
+        promise_pd().then(function(data){
+            console.log('resolve');
+            console.log(num+"大于5");
+        },function(reason){
+            console.log('reject');
+            console.log(reason+'小于5');
+        }).catch(function(data){
+            console.log(data);
+        })
+    </script>
 </body>
 </html>

@@ -12,6 +12,10 @@
 var fun = new Function("num", "return num");
 ```
 
+## 函数传递参数
+* ECMAScript 中所有函数的参数都是按值传递的。也就是说，把函数外部的值复制给函数内部的参数，就和把值从一个变量复制到另一个变量一样。基本类型值的传递如同基本类型变量的复制一样，而引用类型值的传递，则如同引用类型变量的复制一样。有不少开发人员在这一点上可能会感到困惑，因为访问变量有按值和按引用两种方式，而参数只能按值传递。
+* 可以把 ECMAScript 函数的参数想象成局部变量。变量的是按值进行传递的。
+
 ## Function
 
 * 没有重载 -- 如果有二个相同的函数，那么JavaScript在解析时。后者将覆盖前者。
@@ -30,6 +34,9 @@ var fun = new Function("num", "return num");
     - call()
     - apply()
     - bind()
+
+
+
 
 ## call、apply
 >call, apply都属于Function.prototype的一个方法,它是JavaScript引擎内在实现的,因为属于Function.prototype,所以每个Function对象实例,也就是每个方法都有call, apply属性.
