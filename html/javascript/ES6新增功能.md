@@ -83,8 +83,21 @@ _另外：includes repeat_
         console.log(str.repeat(2));  //hellohello
 ```
 * 函数默认值
-* 解析结构
-* 展开运算符
+```
+function count_d(x=10,y=20){
+    return x+y
+}
+
+count_d();
+```
+* 解析结构(解构赋值)
+```
+[a, b, ...rest] = [1, 2, 3, 4, 5];
+console.log(a); // 1
+console.log(b); // 2
+console.log(rest); // [3, 4, 5]
+```
+* 展开运算符(扩展语法)
 * 对象字面量
     - 当属性与值的变量同名时。
 ```

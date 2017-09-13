@@ -10,11 +10,19 @@
 ### 检查类型
 * typeof  // string、number、boolean、Object、undefined和Object
 * instanceof  // obj instanceof Object 
+	- instanceof操作符的左操作数是一个普通的对象，右操作数是一个函数。instanceof回答的问题是：在a的整条[[Prototype]]链中是否有指向Foo.prototype的对象？`a instanceof Foo`
 * hasOwnProperty    // obj hasOwnProerty('obj的值返回true，否则返回false，不继承原型')
     - Object.prototype.hasOwnProperty.call(obj,"a")，
 * isPrototypeOf // prototypeObj.isPrototypeOf(object)
+	- 在a的整条[[Prototype]]链中是否出现过Foo.prototype.`Foo.prototype.isPrototypeOf( a )`
 * Object.prototype.toString.call(123)
 
+
+## Object.getPrototypeOf
+
+* Object.getPrototypeOf(object)
+* 给定对象的原型。如果没有继承属性，则返回 null 。
+* 
 
 
 ## Object.defineproperty
@@ -24,6 +32,9 @@
 注意：
 1. 修改可配置(configurable)是单向的。//修改成false后，就不可以在修改成true
 2. 修改成false后，不可以进行删除。
+
+
+
 ### 屏蔽属性
 ```
 var obj = {a:1,b:2,c:3,d:4};
@@ -52,6 +63,25 @@ myobj.hasOwnProperty('a');
 myobj.a++; //隐式屏蔽
 
 myobj.hasOwnProperty('a');
+```
+```
+    var obj = {
+        a:1,
+        d:4,
+        get b(){
+            return 2;
+        },
+        set c(val){
+            this._c_ = val*2;
+        }
+    };
+    Object.defineProperty(obj,'d',{
+        enumerable: false,
+        configurable: false,
+        writable: false,
+        value: "static"
+    })
+    var myobj = Object.create(obj);
 ```
 
 
