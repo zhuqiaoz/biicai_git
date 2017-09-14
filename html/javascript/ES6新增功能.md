@@ -89,13 +89,71 @@ function count_d(x=10,y=20){
 }
 
 count_d();
+
+//function默认值
+
+function add([x,y,z] = [1,2,3]){
+    return x+y+z;
+}
+
+//function默认值
+
+function add1({a,b,c} = {a:1,b:2,c:3}){
+    return a*b*c
+}
+
+//function默认值
+
+function add2([a,b] = [1,2],{z:z} = {z:100}){
+    return a+b+z;
+}
 ```
 * 解析结构(解构赋值)
+    - 加载模块 : 解构赋值可以帮助加载一个模块的特定子集
+    ```
+    const { Loader, main } = require('toolkit/loader'); //MDN
+    ```
 ```
-[a, b, ...rest] = [1, 2, 3, 4, 5];
-console.log(a); // 1
-console.log(b); // 2
-console.log(rest); // [3, 4, 5]
+//object
+
+var {a,b,...c} = {a:1,b:2,c:3,d:4,e:5}
+
+//array
+var [d,e,...f] = [7,8.3,9,10,11]
+
+
+//直面量
+
+var g = [1,2,3,4,5,6];
+
+var [h,j,k,l] = g
+
+//解构数组
+
+var z = ['1','2','3']
+
+var [x,v,n] =z
+
+//解构默认值
+
+var m,q;
+
+[m=4,q=9] = [1]
+
+//解构交换变量
+
+var w = 11;
+var r = 22;
+
+[w,r] = [r,w]
+
+//function返回数组
+
+function f(){
+    return [1,2,3,4,5,6,7,8,9,0]
+}
+
+var [t,y,...u] = f();
 ```
 * 展开运算符(扩展语法)
 * 对象字面量

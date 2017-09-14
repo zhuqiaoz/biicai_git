@@ -15,6 +15,7 @@
 
 ## 函数
 
+* 严格模式禁止自动或隐式地创建全局变量
 * 严格模式要求命名函数的参数必须唯一
 * arguments不能修改。
 * arguments.callee 和 arguments.caller 使用抛出 TypeError
