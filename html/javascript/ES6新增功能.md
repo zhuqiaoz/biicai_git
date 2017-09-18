@@ -2,13 +2,22 @@
 
 ## 将ES6代码转换成ES5请使用Babel
 
+
 ## 新特性
 * let 定义的变量不会被变量提升，const 定义的常量不能被修改，let 和 const 都是块级作用域
 
 >let实际上是有变量提升的。提升至块顶端。 从块顶端到初始化变量叫做"TDZ"(临时死区)。 在临时死区中，使用变量。那么有会抛出异常。
 
+> const === Object.defineProperty({writable : false, configurable : false})
+
 * import导入模块、export导出模块。
 * ES6定义类的概念 Class。 Class之间可以通过extends关键字实现继承。super关键字，它指代父类的实例（即父类的this对象）
+* Symbol : 包含一个不透明且无法预测的值（从技术角度来说就是一个字符串）。一般来说你不会用到符号的实际值（因为理论上来说在不同的JavaScript引擎中值是不同的），所以通常你接触到的是符号的名称，
+```
+var myobj = {
+    [Symbol.some] : 'wyg'
+}
+```
 * Promise
     - Promise 对象用于一个异步操作的最终完成（或失败）及其结果值的表示。(简单点说就是处理异步请求。。我们经常会做些承诺，如果我赢了你就嫁给我，如果输了我就嫁给你之类的诺言。这就是promise的中文含义。一个诺言，一个成功，一个失败。)--MDN
     - Promise 是一个构造函数，包含三个状态：
@@ -176,3 +185,14 @@ var person = {
 ```
 * class
 * Modules
+
+* Object [可计算的属性名称]
+```
+var foo = 'fox';
+
+var myobj = {
+    [foo+'bat'] : 'nb'
+}
+
+myobj['foxbat']
+```

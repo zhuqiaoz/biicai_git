@@ -8,6 +8,28 @@
 </head>
 <body>
     <a name="123">onclick</a>
+
+    <label>输入：</label><input type="text" id="demo1"><br/>
+    <label>输出：</label> <input type="textarea" id="demo2"></input>
+    <script>
+        var a={};
+        var output=[];
+        Object.defineProperty(a,'b',{   //给a对象添加b属性
+            set:function(val){
+                output['b']=val;
+            },
+            get:function(){
+                return output['b'];
+            }
+        })
+        var demo1=document.querySelector('#demo1');
+        var demo2=document.querySelector('#demo2');
+        demo1.onkeyup=function(){
+            a.b=demo1.value;//给a对象添加b属性时候，触发了a的set方法，此时#demo1的value值赋值给output['b']。
+            demo2.value=output['b'];
+        }
+     
+    </script>
     <script>
     var aHello = {
     name : "hello",
@@ -22,11 +44,11 @@ document.querySelector('a').onclick = aHello.showName;
     </script>
 <script>
 function promise_calss() {
-    return new Promise(function(reslove,reject){
+    return new Promise(function(resolve,reject){
         setTimeout(function(){
             var num = Math.floor(Math.random()*9+1);
             if(num > 5){
-                reslove(num);
+                resolve(num);
             }else{
                 reject(num);
             }
@@ -35,7 +57,7 @@ function promise_calss() {
 }
 
 promise_calss().then(function(data){
-    console.log('reslove');
+    console.log('resolve');
     console.log(data + '>5');
 },
 function(reason){

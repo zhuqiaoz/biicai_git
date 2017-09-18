@@ -15,6 +15,8 @@
     - Object.prototype.hasOwnProperty.call(obj,"a")，
 * isPrototypeOf // prototypeObj.isPrototypeOf(object)
 	- 在a的整条[[Prototype]]链中是否出现过Foo.prototype.`Foo.prototype.isPrototypeOf( a )`
+* Object.getPrototypeOf()
+    - 返回指定对象的原型（即, 内部[[Prototype]]属性的值。
 * Object.prototype.toString.call(123)
 
 
@@ -33,6 +35,17 @@
 1. 修改可配置(configurable)是单向的。//修改成false后，就不可以在修改成true
 2. 修改成false后，不可以进行删除。
 
+
+> const === Object.defineProperty({writable : false, configurable : false})
+
+* 禁止一个对象添加新属性并且保留已有属性，可以使用Object.preventExtensions(..)  === Object.seal(密封)
+```
+var obj = {a:2}
+
+Object.preventExtensions(obj)
+```
+* Object.freeze(..)会创建一个冻结对象，这个方法实际上会在一个现有对象上调
+    - 用Object.seal(..)并把所有“数据访问”属性标记为writable:false，这样就无法修改它们的值。
 
 
 ### 屏蔽属性
