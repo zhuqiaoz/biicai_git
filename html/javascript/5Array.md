@@ -21,6 +21,18 @@ Object.getPrototypeOf(a) === Array.prototype // true OR false
 
 Object.prototype.toString.call(a)  //靠谱
 ```
+## Array.length
+
+* 如果一个可以被强制转换为10进制number的string值被用作键的话，它会认为你想使用number索引而不是一个string键！
+
+```
+var arr = [];
+
+arr["123"] = 123;
+
+arr.length //124
+```
+
 
 ## `Array.prototype` 所有的方法
 

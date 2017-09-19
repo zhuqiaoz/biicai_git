@@ -18,12 +18,12 @@ Object.prototype.toString.call(null) //"[object Null]"
 * 函数实参没有传入，则也是Undefinde。
 * 在ES5中Undefined 是只读的。
 * Undefined也是自有类型中的一员。
-* 判断null === undefined  
+* 判断 null === undefined  //false
 
 
 
 ## 总结
-
+	
 Undefined表示系统级的，出乎意料或错误值的“空值”
 而null表示程序级的、正常或意料之中的“空值”
 
