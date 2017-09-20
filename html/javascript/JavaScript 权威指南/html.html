@@ -67,6 +67,109 @@ function(reason){
     console.error(err)
 })
 </script>
+
+<script>
+
+var promise_pd = function(){
+    return new Promise(function(resolve,reject){
+        var thank = function(){
+            var num = Math.floor(Math.random()*10)
+            if(num > 5 ){
+                resolve(num)
+            }else{
+                reject(num)
+            }
+        }
+
+        setTimeout(thank, 1000)
+    })
+}
+
+
+const promise_class = promise_pd();
+
+// promise_class.then(function(data){
+//     console.log('resolve')
+//     console.log(num)
+// },
+// function(reason){
+//     console.log('reject')
+//     console.log(reason)
+// }).then(function(value){
+//     console.log(value)
+// },function(reason){
+//     console.log(reason)
+// }).catch(function(err){
+//     console.log(err)
+// })
+
+
+promise_class.then(function(){
+    console.log('ok1')
+},function(){
+    console.log('err1')
+}).then(function(){
+    console.log('ok2')
+},function(){
+    console.log('err2')
+})
+
+
+
+
+
+
+</script>
+
+
+<script>
+//Promis + generator
+var promise_pl = function(time){
+    return new Promise(function(resolve,reject){
+        var task = function(){
+            var num = Math.floor(Math.random()*10+0);
+            if(num > 5 ){
+                resolve(num)
+            }else{
+                reject(num)
+            }
+        }
+
+        setTimeout(task,time)
+    })
+}
+
+var func = function* (time){
+    try {
+        var rel1 = yield promise_pl(1000);
+        var rel2 = yield promise_pl(3000);
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+var run = function(fn){
+    var it = fn();
+
+    function go(result){
+        if (result.done) {
+            return result.value;
+        }
+
+        return result.value.then(function(value){
+            return go(it.next(value));
+        },function(err){
+            return go(it.throw(value));
+        })
+    }
+    go(it.next());
+}
+
+run(func);
+
+</script>
+
+
 <script>
     var obj = {
         a:1,
