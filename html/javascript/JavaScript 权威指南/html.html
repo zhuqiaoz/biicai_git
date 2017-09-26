@@ -43,76 +43,76 @@ document.querySelector('a').onclick = aHello.showName;
     
     </script>
 <script>
-function promise_calss() {
-    return new Promise(function(resolve,reject){
-        setTimeout(function(){
-            var num = Math.floor(Math.random()*9+1);
-            if(num > 5){
-                resolve(num);
-            }else{
-                reject(num);
-            }
-        },1000)
-    })
-}
+// function promise_calss() {
+//     return new Promise(function(resolve,reject){
+//         setTimeout(function(){
+//             var num = Math.floor(Math.random()*9+1);
+//             if(num > 5){
+//                 resolve(num);
+//             }else{
+//                 reject(num);
+//             }
+//         },1000)
+//     })
+// }
 
-promise_calss().then(function(data){
-    console.log('resolve');
-    console.log(data + '>5');
-},
-function(reason){
-    console.log('reject');
-    console.log(reason +'<5');
-}).catch(function(err){
-    console.error(err)
-})
-</script>
-
-<script>
-
-var promise_pd = function(){
-    return new Promise(function(resolve,reject){
-        var thank = function(){
-            var num = Math.floor(Math.random()*10)
-            if(num > 5 ){
-                resolve(num)
-            }else{
-                reject(num)
-            }
-        }
-
-        setTimeout(thank, 1000)
-    })
-}
-
-
-const promise_class = promise_pd();
-
-// promise_class.then(function(data){
-//     console.log('resolve')
-//     console.log(num)
+// promise_calss().then(function(data){
+//     console.log('resolve');
+//     console.log(data + '>5');
 // },
 // function(reason){
-//     console.log('reject')
-//     console.log(reason)
-// }).then(function(value){
-//     console.log(value)
-// },function(reason){
-//     console.log(reason)
+//     console.log('reject');
+//     console.log(reason +'<5');
 // }).catch(function(err){
-//     console.log(err)
+//     console.error(err)
 // })
+// </script>
+
+// <script>
+
+// var promise_pd = function(){
+//     return new Promise(function(resolve,reject){
+//         var thank = function(){
+//             var num = Math.floor(Math.random()*10)
+//             if(num > 5 ){
+//                 resolve(num)
+//             }else{
+//                 reject(num)
+//             }
+//         }
+
+//         setTimeout(thank, 1000)
+//     })
+// }
 
 
-promise_class.then(function(){
-    console.log('ok1')
-},function(){
-    console.log('err1')
-}).then(function(){
-    console.log('ok2')
-},function(){
-    console.log('err2')
-})
+// const promise_class = promise_pd();
+
+// // promise_class.then(function(data){
+// //     console.log('resolve')
+// //     console.log(num)
+// // },
+// // function(reason){
+// //     console.log('reject')
+// //     console.log(reason)
+// // }).then(function(value){
+// //     console.log(value)
+// // },function(reason){
+// //     console.log(reason)
+// // }).catch(function(err){
+// //     console.log(err)
+// // })
+
+
+// promise_class.then(function(){
+//     console.log('ok1')
+// },function(){
+//     console.log('err1')
+// }).then(function(){
+//     console.log('ok2')
+// },function(){
+//     console.log('err2')
+// })
 
 
 
@@ -204,5 +204,86 @@ function muit(x){
 
 muit(2)(6)(4)
 </script>
+
+<script>
+    // async await promise  generator
+
+    // function promise_02(){
+    //     return new Promise(function(resolve,reject){
+    //         var pd = function(){
+    //             var num = Math.floor(Math.random()*10);
+    //             if(num > 5){
+    //                 resolve(num)
+    //             }else{
+    //                 reject(num)
+    //             }
+    //         }
+    //         setTimeout(pd,2000)
+    //     })
+    // }
+
+    // promise_02().then(function(data){
+    //     console.log('resolve')
+    //     console.log(data)
+    // },function(reason){
+    //     console.log('reject')
+    //     console.log(reason)
+    // })
+
+</script>
+<script>
+    // function promise_03(ms){
+    //     return new Promise(function(resolve,reject){
+    //         setTimeout(function(){
+    //             resolve('hello world')
+    //         },ms)
+    //     })
+    // }
+
+    // async function main_pd(){
+    //     const x =await promise_03(2000);
+    //     console.log(x)
+    // }
+
+    // main_pd()
+
+</script>
+<script>
+
+function promise_04(ms){
+    return new Promise(function(resolve,reject){
+        var pd = function(){
+            var num = Math.floor(Math.random()*10+1)
+            if(num > 5){
+                resolve(num)
+            }else{
+                reject(num)
+            }
+        };
+
+        setTimeout(pd , ms);
+    })
+}
+
+
+async function min(){
+    var x = await promise_04(2500);
+
+    var y = await promise_04(3000);
+
+    return x,y
+
+}
+
+min().then(function(data){
+    console.log('resolve')
+    console.log(data)
+},function(reason){
+    console.log('reject')
+    console.log(reason)
+})
+
+</script>
+
 </body>
 </html>
