@@ -4,7 +4,16 @@
 * `Array.of()`
     - 用于将参数依次转化为数组中的一项，然后返回这个新数组，而不管这个参数是数字还是其它
 * `Array.from()`
+    - 将两类对象转为真正的数组：类似数组的对象（array-like object）和可遍历（iterable）的对象（包括ES6新增的数据结构Set和Map）。
 
+* `Array.find()`
+    - 查找符合条件的元素，返回第一个值。
+* `Array.findIndex()`--（当前值，当前的位置，数组）
+    - 查找符合的元素，返回值的索引。无返回-1
+* `Array.fill()`
+    - 填充数组内容。
+* `Array.includes()`
+    - 判断数组中，是否存在指定的至。返回一个boolean
 ## `Array.isArray`
 ```
 var a ={
