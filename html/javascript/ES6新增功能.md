@@ -121,9 +121,20 @@ function add2([a,b] = [1,2],{z:z} = {z:100}){
 }
 ```
 * 解析结构(解构赋值)
+    - 结构赋值中，如果一个值不严格(===)等于Undefined。那么这个值不生效。
+    - 对象结构赋值，需要变量同名。
     - 加载模块 : 解构赋值可以帮助加载一个模块的特定子集
     ```
     const { Loader, main } = require('toolkit/loader'); //MDN
+    ```
+    - 对象的解构赋值的内部机制，是先找到同名属性，然后再赋给对应的变量。真正被赋值的是后者，而不是前者。
+    ```
+    var {foo : baz} = {foo:'aaa',bzr : 'bbb'}
+    console.log(baz) //'aaa'
+    console.log(foo) //Error ReferenceError
+    ```
+    - 对象的嵌套结构赋值
+    ```
     ```
 ```
 //object
