@@ -12,14 +12,15 @@
 
 > const === Object.defineProperty({writable : false, configurable : false})
 
+* 新增了数据集合Set和Map。四种数据集合(Array,Object,Set,Map)
+    - Set: 类数组数据，没有重复的值。
+    - Set：函数可以接受一个数组（或者具有 iterable 接口的其他数据结构）作为参数，用来初始化。
+    - Set：`add(value)`添加一个值，返回Set本身。`delete(value)`删除一个值，返回Boolean确定是否删除成功。`has(value)`返回一个Boolean，确定是否是Set成员。`clear()`清除所有成员，没有返回值 
 * import导入模块、export导出模块。
 * ES6定义类的概念 Class。 Class之间可以通过extends关键字实现继承。super关键字，它指代父类的实例（即父类的this对象）
-* Symbol : 包含一个不透明且无法预测的值（从技术角度来说就是一个字符串）。一般来说你不会用到符号的实际值（因为理论上来说在不同的JavaScript引擎中值是不同的），所以通常你接触到的是符号的名称，
-```
-var myobj = {
-    [Symbol.some] : 'wyg'
-}
-```
+* Symbol :新增的基本类型的值（String,Number,Null,Undefined,Boolean,Symbol,Object）。 
+    - 包含一个不透明且无法预测的值（从技术角度来说就是一个字符串）。一般来说你不会用到符号的实际值（因为理论上来说在不同的JavaScript引擎中值是不同的），所以通常你接触到的是符号的名称.
+    - 生成一个独一无二的'类字符串'的值。
 * Promise
     - Promise 对象用于一个异步操作的最终完成（或失败）及其结果值的表示。(简单点说就是处理异步请求。。我们经常会做些承诺，如果我赢了你就嫁给我，如果输了我就嫁给你之类的诺言。这就是promise的中文含义。一个诺言，一个成功，一个失败。)--MDN
     - Promise 是一个构造函数，包含三个状态：
