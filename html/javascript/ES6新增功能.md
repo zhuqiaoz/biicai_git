@@ -60,6 +60,32 @@
         * reject == 失败执行then的方法(reason)
         * catch == 出错执行的方法。 //then(null, function() {}) 就等同于catch(function() {})
         * Promise.all 提供了并行执行异步操作的能力，并且在所有异步操作执行完后才执行回调。
+* Generator
+    - `Generator` 函数是 ES6 提供的一种异步编程解决方案,
+    - `Generator` 函数有多种理解角度。从语法上，首先可以把它理解成，`Generator` 函数是一个状态机，封装了多个内部状态。
+    - 执行 `Generator` 函数会返回一个遍历器对象，也就是说，`Generator` 函数除了状态机，还是一个遍历器对象生成函数。返回的遍历器对象，可以依次遍历 Generator 函数内部的每一个状态。
+    - 形式上，`Generator` 函数是一个普通函数，但是有两个特征。一是，function关键字与函数名之间有一个`星号`；二是，函数体内部使用`yield`表达式，定义不同的内部状态（`yield`在英语里的意思就是“产出”）。
+    ```
+    function* foo(){
+        yield 'hello';
+        yield 'world';
+        return 'reject';
+    }
+    var pd = foo()
+    pd.next() //{value: "hello", done: false}
+    pd.next() //{value: "world", done: false}
+    pd.next() //{value: "reject", done: false}
+    pd.next() //{value: "undefined" , done:true}
+    ```
+    - Generator 函数可以不用`yield`表达式，这时就变成了一个`单纯的暂缓执行函数`。
+    - Generator 函数遇到`yield`关键字，函数暂停执行，返回`yield`表达式的值。下一次再从该位置继续执行。
+    - `next()`方法可以带一个参数，该参数就会被当作上一个yield表达式的返回值。
+    - `for...of`循环可以自动遍历 Generator 函数时生成的`Iterator`对象，且此时不再需要调用`next`方法。
+    - Generator函数返回的遍历器对象，还有一个`return`方法，可以返回给定的值，并且终结遍历 Generator 函数。
+    - Generator函数如果`return`方法调用时，不提供参数，则返回值的`value`属性为`undefined`。
+    - 如果在 Generator 函数内部，调用另一个 Generator 函数，默认情况下是没有效果的。
+    - 这个就需要用到`yield*`表达式，用来在一个 Generator 函数里面执行另一个 Generator 函数。
+
 
 + 箭头函数
     - this对象的指向是可变的，但是在箭头函数中，它是固定的。
