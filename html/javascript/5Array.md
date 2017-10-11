@@ -2,7 +2,15 @@
 
 ## `ES6`新增的方法
 * `Array.of()`
-    - 用于将参数依次转化为数组中的一项，然后返回这个新数组，而不管这个参数是数字还是其它
+    - 用于将参数依次转化为数组中的一项，然后返回这个新数组，而不管这个  参数是数字还是其它
+    - 
+    ```
+    if(!Array.of){
+        Array.of = function(){
+            return Array.prototype.slice.call(arguments);
+        }
+    }
+    ```
 * `Array.from()`
     - 将两类对象转为真正的数组：类似数组的对象（array-like object）和可遍历（iterable）的对象（包括ES6新增的数据结构Set和Map）。
 * `Array.copyWithin(target,start,end)`

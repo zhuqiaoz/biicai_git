@@ -284,6 +284,17 @@ min().then(function(data){
 })
 
 </script>
+<script>
+//String Number Boolean Null Undefined Symbol Object
+
+function llist(str){
+  return str.split('').reverse('').reduce(function(sum,value,index,arr){
+    return ((index % 3 === 0)? value+',' : value)+sum;
+  })
+}
+
+llist('1234567890')
+</script>
 
 </body>
 </html>
