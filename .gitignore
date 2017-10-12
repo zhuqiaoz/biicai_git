@@ -13,6 +13,9 @@ Desktop.ini
 dist
 build
 
+# test
+/test
+
 # My configurations:
 db.ini
 deploy_key_rsa
