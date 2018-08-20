@@ -197,3 +197,21 @@ function formatCash(str) {
 }
 console.log(formatCash('1234567890'))
 ```
+
+
+* 一个数组里有多个数据，求数据里二位相加等于10的数组数据
+```
+var  arr = [1,2,3,4,5,6,7,8,9,10,-1,11]
+
+var arr_1 = [];
+arr.forEach(function(val,index,arr){
+    for(var i = 1;i<arr.length;i++){
+        var value = val;
+        if(value + arr[i] == 10){ 
+            arr_1.push([value,arr[i]])
+        }
+      
+    }
+    return arr_1;
+})
+```

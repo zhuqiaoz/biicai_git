@@ -33,3 +33,34 @@
     - 如果字符串在字母表中应该排在字符串参数之后，则返回一个正数（大多数情况下是 1，具体的值同样要视实现而定）。
 * fromCharCode()
     - charCodeAt()相反的操作。将字符串编码转换成字符串。
+
+* js遍历复杂对象并输出对象名称
+```
+function sayKey(obj){      
+  function sayName(obj){
+    if (!(obj instanceof Array) && !(obj instanceof Object)) {
+       throw new TypeError('obj 类型错误！');
+    }
+    
+    if (obj instanceof Array) {
+      for (var i = 0; i < obj.length; ++i)
+       {
+          console.log('对象属性名：' , i);
+          if (obj[i] instanceof Object) {
+             sayName(obj[i]);
+          }
+       }
+    } else {
+       for (var key in obj) 
+        {
+          console.log('对象属性名：' , key);
+          if (obj[key] instanceof Object) {
+             sayName(obj[key]);
+          }
+        }
+    }
+  }
+  
+  sayName(obj);
+}
+```
