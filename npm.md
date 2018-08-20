@@ -37,6 +37,6 @@
 
 
 # package
-* dependencies //package的应用依赖模块，即别人要使用这个package，至少需要安装哪些东东。应用依赖模块会安装到当前模块的node_modules目录下。
-* devDependencies //package的开发依赖模块，即别人要在这个package上进行开发
+* dependencies //package的应用依赖模块，即别人要使用这个package，至少需要安装哪些东东。应用依赖模块会安装到当前模块的node_modules目录下。npm install angular --save
+* devDependencies //package的开发依赖模块，即别人要在这个package上进行开发 npm install angular --save-dev
 
