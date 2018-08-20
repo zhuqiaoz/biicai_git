@@ -83,3 +83,15 @@ $ git config --global core.quotepath false
 $ git config core.quotepath false  
 ```
 
+
+
+## git ssh
+
+1. git init 
+2. cd ~/.ssh
+3. ssh-keygen -t rsa -C "your_email@youremail.com"
+4. cat ~/.ssh/id_rsa.pub  //包含ssh-rsa
+5. github -> settings  -> SSH and GPS keys  -> New SSH key
+6. ssh -T git@github.com //验证
+7. git remote add origin git@github.com:michaelliao/learngit.git    
+8. git clone git@github.com:michaelliao/gitskills.git 
