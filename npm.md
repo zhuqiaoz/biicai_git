@@ -19,6 +19,7 @@
 5. 清除缓存
 ```
     npm cache clean
+    npm cache clean --force
 ```
 6. 查看版本号
 ```
