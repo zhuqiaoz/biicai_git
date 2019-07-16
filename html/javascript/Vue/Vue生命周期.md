@@ -1,4 +1,14 @@
 ## Vue
+### 8种组件通信的方法
+1. props / $emit()
+2. provide / inject
+3. $parent / $children
+4. ref / $refs
+5. eventBus
+6. localStorage / SessionStorage / cookie
+7. $attrs /$listeners
+8. vuex
+
 ### 生命周期
 ![Vue生命周期](../img/Vuelifecycle.png)
 1. beforeCreate
