@@ -26,3 +26,7 @@
 > 每个 mutation 都有一个字符串的 事件类型 (type) 和 一个 回调函数 (handler)。这个回调函数就是我们实际进行状态更改的地方，并且它会接受 state 作为第一个参数
 
 > mapMutations 将组件中的 methods 映射为 store.commit 调用
+
+Redux： view——>actions——>reducer——>state变化——>view变化（同步异步一样）
+
+Vuex： view——>commit——>mutations——>state变化——>view变化（同步操作）               view——>dispatch——>actions——>mutations——>state变化——>view变化（异步操作）

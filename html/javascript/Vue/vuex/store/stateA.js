@@ -14,18 +14,21 @@ const getters = {
 
 const actions = {
   ressetstate({commit},value){
-    commit('rest',value)
+    commit('restdata',value)
   }
 }
 
 const mutations = {
-  rest(state,value){
+  restdata(state,value){
+    typeof(value) == 'number' ? value = value  : value =  0 ;
     state.count = value
   },
   add(state,value){
+    typeof(value) == 'number' ? value = value : (parseFloat(value) !== 'number' ? value = 1 : value = parseFloat(value)) ; 
     state.count += 1
   },
   less(state,value){
+    typeof(value) == 'number' ? value = value : (parseFloat(value) !== 'number' ? value = 1 : value = parseFloat(value)) ; 
     state.count -= 1
   }
 }
