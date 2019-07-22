@@ -1,13 +1,14 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import stateA from './stateA.js'
+import Vue from 'vue';
+import Vuex from 'vuex';
 
-Vue.use(Vuex)
+import man from './man.js'
+
+Vue.use(Vuex);
 
 const store = new Vuex.Store({
   modules:{
-    stateA
+    man
   }
 })
 
-export default store
+export default store;
