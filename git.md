@@ -1,23 +1,25 @@
 # Git
 
 1. 设置提交代码的用户信息
+
 ```
 git config --global user.name "Your Name"
 git config --global user.email "email@example.com"
 ```
-2. 配置ssh
+
+2. 配置 ssh
+
 ```
 ssh-keygen -t rsa -C "youremail@example.com"
 ```
+
 > -t 密钥类型 -C 注释
 
-
-
-
 3. 常用操作
+
 ```
-git remote add origin git@github.com:michaelliao/learngit.git    
-git clone git@github.com:michaelliao/gitskills.git //下载远程库 
+git remote add origin git@github.com:michaelliao/learngit.git
+git clone git@github.com:michaelliao/gitskills.git //下载远程库
 git log --graph --pretty=online --abbrev-commit
 git init    //创建git库
 git status  //检查git库中文件状态
@@ -64,10 +66,8 @@ git push origin --tags //一次性推送全部尚未推送到远程的本地标�
 git push origin :refs/tags/v0.9 //删除GitHub上的标签
 ```
 
+- 配置 git
 
-
-
-* 配置git
 ```
 git config --global color.ui true //输出文字颜色醒目
 .gitignore  //设置git忽略文件的样式。https://github.com/github/gitignore
@@ -77,21 +77,20 @@ rm <file> // 删除文件
 git rm <file> //删除提交的文件
 ```
 
-* 解决中文乱码
-```
-$ git config --global core.quotepath false  
-$ git config core.quotepath false  
-```
+- 解决中文乱码
 
-
+```
+$ git config --global core.quotepath false
+$ git config core.quotepath false
+```
 
 ## git ssh
 
-1. git init 
+1. git init
 2. cd ~/.ssh
 3. ssh-keygen -t rsa -C "your_email@youremail.com"
-4. cat ~/.ssh/id_rsa.pub  //包含ssh-rsa
-5. github -> settings  -> SSH and GPS keys  -> New SSH key
+4. cat ~/.ssh/id_rsa.pub //包含 ssh-rsa
+5. github -> settings -> SSH and GPS keys -> New SSH key
 6. ssh -T git@github.com //验证
-7. git remote add origin git@github.com:michaelliao/learngit.git    
-8. git clone git@github.com:michaelliao/gitskills.git 
+7. git remote add origin git@github.com:michaelliao/learngit.git
+8. git clone git@github.com:michaelliao/gitskills.git

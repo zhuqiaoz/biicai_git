@@ -19,8 +19,8 @@
     - E[atter~="value"]:选择具有atter属性且属性值为一用空格分隔的字词列表，其中一个等于value的E元素（包含只有一个值且该值等于val的情况）.
     - E[atter^="value"]:选择具有atter属性且属性值为以value开头的字符串的E元素。
     - E[atter$="value"]:选择具有atter属性且属性值为以value结尾的字符串的E元素。
-    - E[atter*="value"]:选择具有att属性且属性值为包含val的字符串的E元素。
-    - E[atter|="value"]:选择具有att属性且属性值为以val开头并用连接符"-"分隔的字符串的E元素，如果属性值仅为val，也将被选择。
+    - E[atter*="value"]:选择具有atter属性且属性值为包含value的字符串的E元素。
+    - E[atter|="value"]:选择具有atter属性且属性值为以value开头并用连接符"-"分隔的字符串的E元素，如果属性值仅为val，也将被选择。
 + 伪类选择符：
     - E:link: 设置超链接a在未被访问前的样式。
     - E:visited: 设置超链接a在其链接地址已被访问过时的样式。

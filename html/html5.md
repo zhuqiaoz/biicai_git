@@ -1,8 +1,8 @@
-## html5新增标签
+## html5 新增标签
 
     <article>标签定义外部的内容。比如来自一个外部的新闻提供者的一篇新的文章，或者来自 blog 的文本，或者是来自论坛的文本。亦或是来自其他外部源内容。</article>
     <aside>标签定义外部的内容。比如来自一个外部的新闻提供者的一篇新的文章，或者来自 blog 的文本，或者是来自论坛的文本。亦或是来自其他外部源内容。</aside>
-  
+
     <bdi>标签允许您设置一段文本，使其脱离其父元素的文本方向设置</bdi>
     <canvas>标签定义图形</canvas>
     <command>标签可以定义命令按钮，比如单选按钮、复选框或按钮.</command>
@@ -12,7 +12,7 @@
     <summary> 标签包含 details 元素的标题，"details" 元素用于描述有关文档或文档片段的详细信息。<summary>
 
 
-    
+
     <embed>标签定义嵌入的内容，比如插件。</embed>
     <figcaption>标签定义 figure 元素的标题（caption）。</figcaption>
     <figure>签规定独立的流内容（图像、图表、照片、代码等等）。figure 元素的内容应该与主内容相关，但如果被删除，则不应对文档流产生影响。</figure>
@@ -36,7 +36,7 @@
     <mark> 标签定义带有记号的文本。请在需要突出显示文本时使用 <m> 标签。</mark>
     <meter> 标签定义已知范围或分数值内的标量测量。也被称为 gauge（尺度）。例子：磁盘用量、查询结果的相关性，等等。注释：<meter> 标签不应用于指示进度（在进度条中）。如果标记进度条，请使用 <progress> 标签。</meter>
 
-    
+
     <output> 标签定义不同类型的输出，比如脚本的输出。</output>
     <progress> 标签标示任务的进度（进程）。</progress>
 
@@ -54,31 +54,34 @@
     <rt>标签在<ruby>显示注音</rt>
     <rp>标签定义不支持<ruby>显示的内容</rp>
 
-
-
-
-
 ## IE8 兼容
+
 ### DOCTYPE
-### 使用meta标签渲染方式
-### IE8-不支持css媒体查询
 
-* 解决方案，引入respond.js
+### 使用 meta 标签渲染方式
 
-### IE9-下img标签出现蓝色边框
+### IE8-不支持 css 媒体查询
+
+- 解决方案，引入 respond.js
+
+### IE9-下 img 标签出现蓝色边框
+
 ```
 img{border-width:0px;}
 ```
-### IE8中text-align:center文字标签居中，元素并不居中
 
-* 对于文字标签如span、input、p、textarea等没有问题，但是其他非文字标签都会有这个问题。　　解决方法：可以在其子元素中加入CSS属性：margin:0 auto;
-### IE8-不支持background-size
+### IE8 中 text-align:center 文字标签居中，元素并不居中
 
-+ 但是IE滤镜的限制还是比较大：
-  - src路径不能是相对路径
-  - 容器必须要明确的设定width和height这两个css样式。
+- 对于文字标签如 span、input、p、textarea 等没有问题，但是其他非文字标签都会有这个问题。　　解决方法：可以在其子元素中加入 CSS 属性：margin:0 auto;
 
-### IE8-不支持css3样式
+### IE8-不支持 background-size
+
+- 但是 IE 滤镜的限制还是比较大：
+  - src 路径不能是相对路径
+  - 容器必须要明确的设定 width 和 height 这两个 css 样式。
+
+### IE8-不支持 css3 样式
+
 ```
 Css3.PIE
 ```

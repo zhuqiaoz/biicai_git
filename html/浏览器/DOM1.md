@@ -9,7 +9,7 @@
     - Text 3
     - Comment 8
     - DocumentType 10 //就是document.doctype
-    - DocumentFragment 11 //文档片段。不懂
+    - DocumentFragment 11 //文档片段。
     - Attr 2 //特性
     + XML
         - CDATASection //类型只针对基于 XML 的文档，表示的是 CDATA 区域。与 Comment 类似，CDATASection 类型继承自 Text 类型，因此拥有除 splitText()[分割文本节点的方法](#Element)之外的所有字符串操作方法
@@ -109,5 +109,13 @@
 ## DOM 操作
 * table的方法单独写吧。 不写了吧。
 
+## Node Element
+1. Node是节点，其中包含不同类型的节点，Element只是Node节点的一种。
+2. Element继承与Node，可以调用Node的方法。
+3. 给所有DOM元素添加方法，只需要污染Node或者Element的原型链就行。
 
-
+## attribute property
+1. attribute特性由HTML定义，所有出现在HTML标签内的描述节点都是attribute特性。
+2. property属性属于DOM对象，DOM实质就是javascript中的对象。我们可以跟在js中操作普通对象一样获取、设置DOM对象的属性，并且property属性可以是任意类型。
+    - 非自定义的attribute特性与property有1:1的映射关系，比如：id，class，title等。
+    - 非自定义的property（attribute）改变的时候，其对应的attribute（property）在多数情况下也会改变。

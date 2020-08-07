@@ -29,3 +29,13 @@
 * 事件监听
 * 发布/订阅模式
 * Promise对象
+
+## 异步
+
+Node.js：Node.js 的 Event Loop 是基于 libuv。libuv 已经对 Event Loop 作出了实现。
+浏览器：浏览器的 Event Loop 是基于 HTML5 规范的。而 HTML5 规范中只是定义了浏览器中的 Event Loop 的模型，具体实现留给了浏览器厂商。
+
+### 宏任务（Macrotask）
+script（整体代码）、setTimeout、setInterval、XMLHttpRequest.prototype.onload、I/O、UI 渲染
+### 微任务（Microtask）
+Promise、MutationObserver

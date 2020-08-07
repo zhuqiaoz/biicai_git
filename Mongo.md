@@ -1,13 +1,13 @@
 1.添加一个配置文件
-···
-##数据文件
+··· ##数据文件
 dbpath=D:\bridge\MongoDB\data\db
- 
+
 ##日志文件
 logpath=d:\bridge\MongoDB\log\mongo.log
 ···
 
 ##
+
 mongod.exe --config "配置文件目录"
 
 ```
@@ -24,8 +24,8 @@ mongod.exe --config "配置文件目录"
 mongod -dbpath "E:\Work_App\MongoDB\Data\db" -logpath "E:\Work_App\MongoDB\Data\log\MongoDB.log" -remove -serviceName "MongoDB"
 ```
 
-
 ## qinxi.bat
+
 ```
 @echo off
 echo qinxi执行文件执行中。。。
